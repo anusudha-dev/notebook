@@ -60,10 +60,12 @@ section form input:focus{
     
 }
 
-.form-elements{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
+
+.form-elements input{
+    display:block;
+}
+.form-elements label{
+    margin-right: 158px;
 }
 .form-elements a{
     text-decoration: none;
@@ -82,6 +84,12 @@ form button{
     border:none;
     border-radius: 5.6px;
     cursor: pointer;
+}
+.form-elements1 p{
+    display:none;
+}
+.form-elements p{
+    display:none;
 }
 
 @media (max-width: 768px){
