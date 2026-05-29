@@ -1,0 +1,142 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.signin{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    color:blue;
+}
+header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    background-color: black;
+    color: white;
+    border-bottom: 1px solid rgb(122, 118, 118);
+}
+
+i{
+    font-size: 32px;
+    color:blue;
+}
+.left-part{
+    display:flex;
+    align-items: center;
+}
+.penimg{
+    margin-right: 8px;
+}
+.text{
+    margin-right: 40px;
+}
+.navigate li{
+    list-style:none;
+    font-size: 20px;
+    color:blue;
+}
+.right-part{
+    display:flex;
+    align-items: center;
+}
+.right-part .button button{
+    width:100px;
+    height:50px;
+    border-radius: 8px;
+    background-color: blue;
+    color:white;
+    font-size: 18px;
+    font-weight: 800px;
+    border: none;
+    margin-left: 30px;
+}
+.herobanner{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-bottom: 1px solid rgb(102, 97, 97);
+    padding-bottom: 90px;
+}
+.herobanner div i{
+    font-size: 76px;
+    margin-bottom: 32px;
+    margin-top: 80px;
+}
+.title{
+    font-weight: 700;
+    font-size: 60px;
+    text-align: center;
+}
+.description{
+    margin-top: 24px;
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+    color:rgb(120, 113, 113);
+}
+.big-card{
+    display:flex;
+    flex-direction: column;
+    color:white;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    border:1px solid rgb(118, 115, 115);
+    padding: 32px;
+    width:500px;
+    background-color: rgb(58, 56, 56);
+    border-radius: 8px;
+}
+.big-card .cardtitle{
+    margin-top:30px;
+    font-size: 30px;
+    font-weight: 700;
+}
+.big-card .carddescription{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: rgb(136, 131, 131);
+    
+}
+.big-card .clickbtn{
+    width:170px;
+    height:40px;
+    border-radius: 8px;
+    border: none;
+    background-color: blue;
+    color:white;
+}
+.footer{
+    padding:40px 32px;
+    display:flex;
+    gap:40px;
+    color:white;
+}
+.footer--partsub{
+    max-width: 327.604px;
+}
+.footer__subpart{
+    max-width: 237.458px;
+
+}
+.footer__subpart{
+    max-width: 237.458px;
+    
+}
+.footer__subpart p{
+    margin-bottom: 8px;
+    
+    
+}
