@@ -1,0 +1,403 @@
+@font-face {
+    font-family: 'Geist';
+    src: url('./geist.ttf');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./roboto.ttf');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./poppins.ttf');
+}
+
+
+
+
+
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: lab(8.11897% .811279 -12.254);
+    font-family:'roboto', 'geist';
+}
+
+.signin{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    color:lab(59.866% 22.4834 -64.4485);
+}
+#identificationpartbth{
+    width: 110px;
+    text-decoration: none;
+    color:lab(59.866% 22.4834 -64.4485);;
+    font-size: 18px;
+    font-weight: 600;
+}
+#identificationpartbth i{
+    font-size: 14px;
+    font-weight: 400px;
+    margin-right: 3px;
+    
+}
+
+#pagedescription{
+
+        color:lab(65.9269% -.832707 -8.17473);
+        margin-top: 8px;
+}
+    
+header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 18px;
+    color: white;
+    border-bottom: 1px solid rgb(82, 81, 81);
+}
+
+.left-part .pen{
+    color:lab(59.866% 22.4834 -64.4485);
+    width:32px;
+    height: 32px;
+}
+.left-part{
+    display:flex;
+    align-items: center;
+    gap:20px;
+}
+.left-part #pagetitle{
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.left-part #pagedescription{
+    color:lab(65.9269% -.832707 -8.17473);
+
+}
+.penimg{
+    margin-right: 8px;
+}
+#text{
+    margin-right: 40px;
+    width:100%;
+    max-width: 1064px;
+    height:24px;
+    border:1px solid rgb(112, 109, 109);
+    
+
+}
+.right-part .log-out{
+    text-decoration: none;
+    color:lab(59.866% 22.4834 -64.4485);
+    font-size: 24px;
+}
+.navigate li{
+    list-style:none;
+    font-size: 20px;
+    color:lab(59.866% 22.4834 -64.4485);
+}
+.navigate li a{
+    text-decoration: none;
+    color:lab(59.866% 22.4834 -64.4485);
+}
+.right-part{
+    display:flex;
+    gap:30px;
+    align-items: center;
+}
+.right-part .button button{
+    padding: 8px 12px;
+    width:102px;
+    height:36px;
+    border-radius: 8px;
+    background-color: lab(48.295% 38.3129 -81.9673);
+    color:white;
+    font-size: 14px;
+    font-weight: 600px;
+    border: none;
+    margin-left: 30px;
+}
+.mainproperty{
+    padding:40px 32px;
+    margin:0px 45.667px;
+}
+
+.identificationpart{
+    margin-bottom: 32px;
+    display:flex;
+    justify-content: space-between;
+    color:white;
+}
+
+.notetitle{
+    display:flex;
+    flex-direction: column;
+    gap:8px;
+    color:white;
+    margin-bottom: 10px;
+    
+
+}
+#text:focus{
+    outline:none;
+    
+    border:2px solid lab(59.866% 22.4834 -64.4485);
+}
+#content:focus{
+    outline:none;
+    border:2px solid lab(59.866% 22.4834 -64.4485);
+}
+
+.notetitle #text{
+    max-width: 1088px;
+    height: 40px;
+    padding:8px 12px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    color:white;
+   
+    
+    
+}
+.notecontent{
+    display:flex;
+    flex-direction: column;
+    gap:8px;
+    color:white;
+    
+
+}
+.notecontent #content{
+    width:100%;
+    max-width:1088px;
+    min-height:200px;
+    resize:vertical;
+    padding:8px 12px;
+    border-radius:8px;
+    background-color: rgba(255,255,255,0.05);
+    outline:none;
+    color:white;
+    
+}
+.buttons{
+    margin-top: 20px;
+    display:flex;
+    gap:10px;
+    
+
+}
+.buttons .savecreate{
+    width:73px;
+    height:43px;
+    border-radius: 4px;
+    background-color: lab(59.866% 22.4834 -64.4485);;
+    color:white;
+    border:none;
+    font-size:18px ;
+    font-weight: 400;
+}
+.buttons .cancel{
+    width:73px;
+    height:43px;
+    border-radius: 4px;
+    background-color:#111827;
+    color:white;
+    border:none;
+    font-size:18px ;
+    font-weight: 400;
+
+} 
+
+.mobile-menu{
+    position:fixed;
+
+    top:0;
+    right:0;
+
+    width:100%;
+    height:60vh;
+
+    background-color:lab(8.11897% .811279 -12.254);
+
+    z-index:1000;
+
+    padding:24px;
+
+    color:white;
+}
+
+.hidden{
+    display:none;
+}
+
+.mobile-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding-bottom:24px;
+
+    border-bottom:1px solid #374151;
+}
+
+.mobile-logo{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.mobile-logo .pen{
+    width:32px;
+    height:32px;
+
+    color:#6366f1;
+}
+
+.close-menu{
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+    font-weight: 400;
+}
+
+.mobile-links{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:32px;
+
+    margin-top:40px;
+    background-color: lab(8.11897% .811279 -12.254);
+}
+
+.mobile-links a{
+    text-decoration:none;
+
+    color:#6366f1;
+
+    font-size:20px;
+
+    font-weight:600;
+}
+
+.mobile-links button{
+    height:36px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#6366f1;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+.footer{
+    padding:40px 32px;
+    display:flex;
+    justify-content:space-between;
+    color:white;
+    border-bottom: 1px solid lab(65.9269% -.832707 -8.17473);
+}
+.footer__subpart .footer--partsub{
+    max-width: 327.604px;
+}
+.footer__subpart{
+    max-width: 237.458px;
+
+}
+.footer__subpart{
+    max-width: 237.458px;
+    
+}
+.footer__subpart p{
+    margin-bottom: 12px;
+    
+    
+}
+
+.footer__endpart{
+    display:flex;
+    justify-content: space-between;
+    padding: 32px;
+    color:lab(47.7841% -.393182 -10.0268);
+    font-size: 12px;
+    line-height: calc(1 / .75);
+}
+
+
+
+
+
+@media(max-width:768px){
+    .mainproperty{
+        padding:24px;
+        margin:0px;
+    }
+    .identificationpart{
+        display:flex;
+        flex-direction: column;
+        gap:25px;
+    }
+    #pagedescription{
+
+        color: lab(65.9269% -.832707 -8.17473);
+        margin-top: 8px;
+    }
+
+      body{
+        padding:56px 24px;
+    }
+    
+
+
+
+
+
+
+    .right-part .headerbutton{
+        display:none;
+    }
+    .right-part .log-out{
+        display:none;
+    }
+   
+    .right-part .sandwhichicon{
+        display:block;
+    }
+    .h-6 {
+        width:24px;
+        height:24px;
+        color:white;
+    }
+        
+
+
+     
+
+}
