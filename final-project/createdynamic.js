@@ -4,6 +4,12 @@ const mobileMenu = document.querySelector(".mobile-menu");
 
 const closeBtn = document.querySelector(".close-menu");
 
+const mobilecreatebtn=document.querySelector(".notesss");
+
+mobilecreatebtn.addEventListener('click',()=>{
+    window.location.href='createdynamic.html';
+});
+
 menuBtn.addEventListener("click", () => {
 
     mobileMenu.classList.remove("hidden");
@@ -31,7 +37,7 @@ backtohome.addEventListener('click',()=>{
 
 const createnoteupperbtn=document.querySelector('.headerbutton');
 createnoteupperbtn.addEventListener('click',()=>{
- localStorage.removeItem("noteId");
+localStorage.removeItem("noteId");
 window.location.href='createdynamic.html';
 
 });
@@ -186,69 +192,6 @@ function createFetchApi(e){
 }
 }
 
-/*shownotes.addEventListener('click', showNotesUi);
-
-function showNotesUi(){
-    
-    
-
-    mainproperty.style.display = 'none';
-
-    fetch("https://ekwvioyykteghvotgimj.supabase.co/rest/v1/notes?select=*", {
-
-        method: "GET",
-
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${logintoken}`,
-            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrd3Zpb3l5a3RlZ2h2b3RnaW1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NTE3NzgsImV4cCI6MjA5NDIyNzc3OH0.CYSDUnRWBmumDp9tl17XrsstX8bS9ogEIXXZOwsBFN8"
-        }
-
-    })
-
-    .then(response => response.json())
-
-    .then(data => {
-
-        console.log(data);
-         if(data.code === "PGRST303"){
-
-        alert("Session expired. Please login again");
-
-        localStorage.removeItem("token1");
-
-        window.location.href = "signup.html";
-
-        return;
-    }
-
-
-        displayNotes(data);
-
-    })
-
-    .catch(error => console.log(error));
-}
-
-
-
-function displayNotes(data){
-
-    shownotes.innerHTML = "";
-
-    data.forEach((item) => {
-
-        const div = document.createElement('div');
-
-        div.innerHTML = `
-            <h3>${item.title}</h3>
-            <p>${item.content}</p>
-        `;
-
-        shownotes.appendChild(div);
-
-    });
-}*/
 
 if(noteId){
 

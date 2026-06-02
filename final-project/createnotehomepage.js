@@ -4,6 +4,11 @@ const mobileMenu = document.querySelector(".mobile-menu");
 
 const closeBtn = document.querySelector(".close-menu");
 
+const mobilecreatebtn=document.querySelector(".notesss");
+mobilecreatebtn.addEventListener('click',()=>{
+    window.location.href='createdynamic.html';
+})
+
 menuBtn.addEventListener("click", () => {
 
     mobileMenu.classList.remove("hidden");

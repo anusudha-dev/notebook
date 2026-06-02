@@ -24,6 +24,7 @@ body{
     background-color: lab(8.11897% .811279 -12.254);
     font-family:'roboto', 'geist';
 }
+
 .signin{
     text-decoration: none;
     font-size: 16px;
@@ -46,9 +47,9 @@ body{
 
 #pagedescription{
 
-        color: lab(65.9269% -.832707 -8.17473);
+        color:lab(65.9269% -.832707 -8.17473);
         margin-top: 8px;
-    }
+}
     
 header{
     display:flex;
@@ -58,7 +59,6 @@ header{
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 18px;
-   
     color: white;
     border-bottom: 1px solid rgb(82, 81, 81);
 }
@@ -71,6 +71,7 @@ header{
 .left-part{
     display:flex;
     align-items: center;
+    gap:20px;
 }
 .left-part #pagetitle{
     margin-bottom: 8px;
@@ -84,12 +85,13 @@ header{
 .penimg{
     margin-right: 8px;
 }
-.text{
+#text{
     margin-right: 40px;
     width:100%;
     max-width: 1064px;
     height:24px;
-
+    border:1px solid rgb(112, 109, 109);
+    
 
 }
 .right-part .log-out{
@@ -100,11 +102,11 @@ header{
 .navigate li{
     list-style:none;
     font-size: 20px;
-    color:lab(59.866% 22.4834 -64.4485);;
+    color:lab(59.866% 22.4834 -64.4485);
 }
 .navigate li a{
     text-decoration: none;
-    color:lab(59.866% 22.4834 -64.4485);;
+    color:lab(59.866% 22.4834 -64.4485);
 }
 .right-part{
     display:flex;
@@ -144,14 +146,26 @@ header{
     
 
 }
+#text:focus{
+    outline:none;
+    
+    border:2px solid lab(59.866% 22.4834 -64.4485);
+}
+#content:focus{
+    outline:none;
+    border:2px solid lab(59.866% 22.4834 -64.4485);
+}
+
 .notetitle #text{
     max-width: 1088px;
     height: 40px;
     padding:8px 12px;
-   background-color: rgba(255,255,255,0.05);
-    border:1px solid rgb(67, 65, 65);
+    background-color: rgba(255,255,255,0.05);
     border-radius: 8px;
     color:white;
+   
+    
+    
 }
 .notecontent{
     display:flex;
@@ -164,13 +178,12 @@ header{
 .notecontent #content{
     width:100%;
     max-width:1088px;
-      
     min-height:200px;
     resize:vertical;
     padding:8px 12px;
     border-radius:8px;
     background-color: rgba(255,255,255,0.05);
-    border:1px solid rgb(67, 65, 65);
+    outline:none;
     color:white;
     
 }
@@ -342,6 +355,10 @@ header{
 
 
 @media(max-width:768px){
+    .mainproperty{
+        padding:24px;
+        margin:0px;
+    }
     .identificationpart{
         display:flex;
         flex-direction: column;

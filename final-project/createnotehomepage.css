@@ -59,6 +59,7 @@ header{
     display:flex;
     
     align-items: center;
+   
 } 
 .left-part .pen{
     color:lab(59.866% 22.4834 -64.4485);
