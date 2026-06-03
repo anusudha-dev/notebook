@@ -4,84 +4,62 @@ const mobileMenu = document.querySelector(".mobile-menu");
 
 const closeBtn = document.querySelector(".close-menu");
 
-const mobilecreatebtn=document.querySelector(".notesss");
-mobilecreatebtn.addEventListener('click',()=>{
-    window.location.href='createdynamic.html';
-})
+const mobilecreatebtn = document.querySelector(".notesss");
+mobilecreatebtn.addEventListener("click", () => {
+  window.location.href = "createdynamic.html";
+});
 
 menuBtn.addEventListener("click", () => {
-
-    mobileMenu.classList.remove("hidden");
-
+  mobileMenu.classList.remove("hidden");
 });
 
 closeBtn.addEventListener("click", () => {
-
-    mobileMenu.classList.add("hidden");
-
+  mobileMenu.classList.add("hidden");
 });
-
-
-
 
 const logintoken = localStorage.getItem("token1");
 
-if(!logintoken){
-
-    window.location.href = "signup.html";
-
+if (!logintoken) {
+  window.location.href = "signup.html";
 }
 
-
-
-const createnoteupperbtn=document.querySelector('.headerbutton');
-createnoteupperbtn.addEventListener('click',()=>{
-window.location.href='createdynamic.html';
-
+const createnoteupperbtn = document.querySelector(".headerbutton");
+createnoteupperbtn.addEventListener("click", () => {
+  window.location.href = "createdynamic.html";
 });
 
-const createnotebtn=document.querySelector('.notecreation');
-createnotebtn.addEventListener('click',()=>{
-window.location.href='createdynamic.html';
-
+const createnotebtn = document.querySelector(".notecreation");
+createnotebtn.addEventListener("click", () => {
+  window.location.href = "createdynamic.html";
 });
 
-let emptystate=document.querySelector('.createnoteoption');
-let notessection=document.querySelector('.hidewithnotes');
-let notes=document.querySelector('.showallnotes');
-const cancelbtnn=document.getElementById('cancelBtn');
-let confirmdelete=document.getElementById('confirmDeleteBtn');
-let logout=document.getElementsByClassName('log-out')[0];
-logout.addEventListener("click", ()=>{
+let emptystate = document.querySelector(".createnoteoption");
+let notessection = document.querySelector(".hidewithnotes");
+let notes = document.querySelector(".showallnotes");
+const cancelbtnn = document.getElementById("cancelBtn");
+let confirmdelete = document.getElementById("confirmDeleteBtn");
+let logout = document.getElementsByClassName("log-out")[0];
+logout.addEventListener("click", () => {
+  localStorage.removeItem("token1");
 
-    localStorage.removeItem("token1");
-
-    window.location.replace("signup.html");
-
+  window.location.replace("signup.html");
 });
 
+function getAllNotes() {
+  fetch("https://ekwvioyykteghvotgimj.supabase.co/rest/v1/notes?select=*", {
+    method: "GET",
 
+    headers: {
+      Authorization: `Bearer ${logintoken}`,
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrd3Zpb3l5a3RlZ2h2b3RnaW1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NTE3NzgsImV4cCI6MjA5NDIyNzc3OH0.CYSDUnRWBmumDp9tl17XrsstX8bS9ogEIXXZOwsBFN8",
+    },
+  })
+    .then((response) => response.json())
 
-function getAllNotes(){
-
-    fetch("https://ekwvioyykteghvotgimj.supabase.co/rest/v1/notes?select=*", {
-
-        method:"GET",
-
-        headers:{
-            "Authorization": `Bearer ${logintoken}`,
-            "apikey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrd3Zpb3l5a3RlZ2h2b3RnaW1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NTE3NzgsImV4cCI6MjA5NDIyNzc3OH0.CYSDUnRWBmumDp9tl17XrsstX8bS9ogEIXXZOwsBFN8"
-        }
-
-    })
-
-    .then(response => response.json())
-
-    .then(data => {
-
-        console.log(data);
-        if(data.code === "PGRST303"){
-
+    .then((data) => {
+      console.log(data);
+      if (data.code === "PGRST303") {
         alert(data.message);
 
         localStorage.removeItem("token1");
@@ -89,72 +67,59 @@ function getAllNotes(){
         window.location.href = "login.html";
 
         return;
-}
+      }
 
+      if (!data || data.length === 0) {
+        emptystate.style.display = "block";
 
+        notessection.style.display = "none";
+      } else {
+        emptystate.style.display = "none";
 
+        notessection.style.display = "flex";
+        data.sort((a, b) => {
+          return new Date(b.updated_at) - new Date(a.updated_at);
+        });
 
-        if(!data || data.length === 0){
-
-            emptystate.style.display = "block";
-
-            notessection.style.display = "none";
-
-        }
-
-        else{
-
-            emptystate.style.display = "none";
-
-            notessection.style.display = "flex";
-            data.sort((a, b) => {
-                return new Date(b.updated_at) - new Date(a.updated_at);
-            });
-
-            displayNotes(data);
-
-        }
-
+        displayNotes(data);
+      }
     })
 
-    .catch(error => console.log(error));
-
+    .catch((error) => console.log(error));
 }
 
 getAllNotes();
 
+function displayNotes(data) {
+  let totalarraylength = document.getElementsByClassName("total-length")[0];
+  totalarraylength.textContent = `${data.length} notes`;
+  console.log(data.length);
 
+  notes.innerHTML = "";
 
-function displayNotes(data){
-    
-    let totalarraylength=document.getElementsByClassName('total-length')[0];
-    totalarraylength.textContent=`${data.length} notes`;
-    console.log(data.length);
+  data.forEach((item) => {
+    const div = document.createElement("div");
 
-    notes.innerHTML = "";
+    div.classList.add("card");
 
-    data.forEach((item)=>{
-          
-        const div = document.createElement("div");
-
-        div.classList.add("card");
-
-        div.innerHTML = `
+    div.innerHTML = `
             <div class="cardcontent note-card" data-id="${item.id}">
 
 
             <h3 class="ttitle" >${item.title}</h3>
 
             <p class="ccontent">${item.content}</p>
-            <p class="ddate">Updated ${new Date(item.updated_at).toLocaleString("en-GB", {
-                                    day: "numeric",
-                                    month: "short",
-                                    year: "numeric",
-                                    hour: "2-digit",
-                                    minute: "2-digit",
-                                    hour12: false
-                                })
-                            }
+            <p class="ddate">Updated ${new Date(item.updated_at).toLocaleString(
+              "en-GB",
+              {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+              },
+            )}
                 
             </p>
 
@@ -178,170 +143,133 @@ function displayNotes(data){
 
         `;
 
-        notes.appendChild(div);
-    })
+    notes.appendChild(div);
+  });
 }
 
-
-        
-       
-let selectedId=null;
-const deletemodal=document.getElementById('deleteModal');
+let selectedId = null;
+const deletemodal = document.getElementById("deleteModal");
 
 deletemodal.addEventListener("click", (e) => {
+  if (e.target === deletemodal) {
+    deletemodal.style.display = "none";
 
-    if(e.target === deletemodal){
-
-        deletemodal.style.display = "none";
-
-        selectedId = null;
-    }
-
+    selectedId = null;
+  }
 });
-
 
 console.log(deletemodal);
 
-
 notes.addEventListener("click", (e) => {
-    
+  const deleteBtn = e.target.closest(".trash");
 
-    
-
-
-    const deleteBtn = e.target.closest(".trash");
-
-    
-    if(deleteBtn){
+  if (deleteBtn) {
     selectedId = deleteBtn.dataset.id;
-    console.log(selectedId );
-
-    //deletemodal.classList.remove("hidden"); // open modal
-    deletemodal.style.display='flex';
-    return;
-
-    }
+    console.log(selectedId);
 
     
+    deletemodal.style.display = "flex";
+    return;
+  }
 
+  const copyBtn = e.target.closest(".copy");
 
+  if (!copyBtn) return;
 
+  const noteId = copyBtn.dataset.id;
 
-     const copyBtn = e.target.closest(".copy");
+  const currentCard = copyBtn.closest(".card"); //parent
 
-    if (!copyBtn) return;
+  const selectedNote = document.querySelector(
+    `.note-card[data-id="${noteId}"]`,
+  );
 
-    const noteId = copyBtn.dataset.id;
+  const title = selectedNote.querySelector("h3").textContent;
 
-    const currentCard = copyBtn.closest(".card");//parent//
+  const content = selectedNote.querySelector("p").textContent;
 
-    const selectedNote = document.querySelector(
-        `.note-card[data-id="${noteId}"]`
-    );
+  const cloneData = {
+    title: `${title}(clone)`,
+    content: content,
+    updated_at: new Date().toISOString(),
+  };
 
-    const title =
-        selectedNote.querySelector("h3").textContent;
+  fetch("https://ekwvioyykteghvotgimj.supabase.co/rest/v1/notes", {
+    method: "POST",
 
-    const content =
-        selectedNote.querySelector("p").textContent;
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${logintoken}`,
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrd3Zpb3l5a3RlZ2h2b3RnaW1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NTE3NzgsImV4cCI6MjA5NDIyNzc3OH0.CYSDUnRWBmumDp9tl17XrsstX8bS9ogEIXXZOwsBFN8",
+      Prefer: "return=representation",
+    },
 
-    const cloneData = {
-        title: `${title}(clone)`,
-        content: content,
-        updated_at:  new Date().toISOString()
-    };
+    body: JSON.stringify(cloneData),
+  })
+    .then((response) => response.json())
 
-    fetch("https://ekwvioyykteghvotgimj.supabase.co/rest/v1/notes", {
+    .then((data) => {
+      getAllNotes();
 
-        method: "POST",
-
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${logintoken}`,
-            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrd3Zpb3l5a3RlZ2h2b3RnaW1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NTE3NzgsImV4cCI6MjA5NDIyNzc3OH0.CYSDUnRWBmumDp9tl17XrsstX8bS9ogEIXXZOwsBFN8",
-            "Prefer": "return=representation"
-        },
-
-        body: JSON.stringify(cloneData)
-
+      Toastify({
+        text: "Note cloned successfully",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+      }).showToast();
     })
 
-    .then(response => response.json())
-
-    .then(data => {
-
-       
-         getAllNotes();
-        
-
-
-        Toastify({
-            text: "Note cloned successfully",
-            duration: 3000,
-            gravity: "top",
-            position: "center"
-        }).showToast();
-
-    })
-
-    .catch(error => console.log(error));
-
+    .catch((error) => console.log(error));
 });
 
-
 cancelbtnn.addEventListener("click", () => {
-    //deletemodal.classList.add("hidden");
-    deletemodal.style.display='none';
+ 
+  deletemodal.style.display = "none";
 
-    selectedId = null;
+  selectedId = null;
 });
 
 confirmdelete.addEventListener("click", () => {
-
-    fetch(`https://ekwvioyykteghvotgimj.supabase.co/rest/v1/notes?id=eq.${selectedId}`, {
-        method: "DELETE",
-        headers: {
-            "Authorization": `Bearer ${logintoken}`,
-            "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrd3Zpb3l5a3RlZ2h2b3RnaW1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NTE3NzgsImV4cCI6MjA5NDIyNzc3OH0.CYSDUnRWBmumDp9tl17XrsstX8bS9ogEIXXZOwsBFN8"
-        }
-    })
+  fetch(
+    `https://ekwvioyykteghvotgimj.supabase.co/rest/v1/notes?id=eq.${selectedId}`,
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${logintoken}`,
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrd3Zpb3l5a3RlZ2h2b3RnaW1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NTE3NzgsImV4cCI6MjA5NDIyNzc3OH0.CYSDUnRWBmumDp9tl17XrsstX8bS9ogEIXXZOwsBFN8",
+      },
+    },
+  )
     .then((response) => {
-          Toastify({
-                text: "Note deleted successfully",
-                duration: 3000,
-                gravity: "top",
-                position: "center",
-                style: {
-                    background: "#071b1b",
-                    color: "#7CFFB2",
-                    border: "1px solid #00ff99",
-                    borderRadius: "12px"
-                }
-            }).showToast();
-        deletemodal.style.display='none';
-        selectedId = null;
-        console.log(response);
-        getAllNotes();
+      Toastify({
+        text: "Note deleted successfully",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        style: {
+          background: "#071b1b",
+          color: "#7CFFB2",
+          border: "1px solid #00ff99",
+          borderRadius: "12px",
+        },
+      }).showToast();
+      deletemodal.style.display = "none";
+      selectedId = null;
+      console.log(response);
+      getAllNotes();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 });
 
-notes.addEventListener("click",(e)=>{
+notes.addEventListener("click", (e) => {
+  const noteCard = e.target.closest(".note-card");
+  if (!noteCard) return;
 
-   const noteCard = e.target.closest(".note-card");
-    if (!noteCard) return;
+  const noteId = noteCard.dataset.id;
 
-    const noteId = noteCard.dataset.id;
+  localStorage.setItem("noteId", noteId);
 
-    localStorage.setItem("noteId", noteId);
-
-    window.location.href = "createdynamic.html";
+  window.location.href = "createdynamic.html";
 });
-
-
-
-
-
-
-
-
