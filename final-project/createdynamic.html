@@ -1,150 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="createdynamic.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css">
+    <link rel="stylesheet" href="createdynamic.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css"
+    />
     <script defer src="createdynamic.js"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"></script>
-</head>
-<body>
+    <script
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"
+    ></script>
+  </head>
+  <body>
     <header>
-        <div class="left-part">
-            <div class="penimg">
-            <svg class="pen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="mx-auto h-10 w-10 text-indigo-400" fill="currentColor" aria-hidden="true">
-                <path d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 301.3L442.1 335.2L260.9 516.4C250.2 527.1 236.8 534.9 222.2 539L94.4 574.6C86.1 576.9 77.1 574.6 71 568.4C64.9 562.2 62.6 553.3 64.9 545L100.4 417.2zM156 413.5C151.6 418.2 148.4 423.9 146.7 430.1L122.6 517L209.5 492.9C215.9 491.1 221.7 487.8 226.5 483.2L155.9 413.5zM510 267.4C493.4 250.8 458.7 216.1 406 163.4L372 129.5C398.5 103 413.4 88.1 416.9 84.6C430.4 71 448.8 63.4 468 63.4C487.2 63.4 505.6 71 519.1 84.6L554.8 120.3C568.4 133.9 576 152.3 576 171.4C576 190.5 568.4 209 554.8 222.5C551.3 226 536.4 240.9 509.9 267.4z"></path>
+      <div class="left-part">
+        <div class="penimg">
+          <svg
+            class="pen"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+            class="mx-auto h-10 w-10 text-indigo-400"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 301.3L442.1 335.2L260.9 516.4C250.2 527.1 236.8 534.9 222.2 539L94.4 574.6C86.1 576.9 77.1 574.6 71 568.4C64.9 562.2 62.6 553.3 64.9 545L100.4 417.2zM156 413.5C151.6 418.2 148.4 423.9 146.7 430.1L122.6 517L209.5 492.9C215.9 491.1 221.7 487.8 226.5 483.2L155.9 413.5zM510 267.4C493.4 250.8 458.7 216.1 406 163.4L372 129.5C398.5 103 413.4 88.1 416.9 84.6C430.4 71 448.8 63.4 468 63.4C487.2 63.4 505.6 71 519.1 84.6L554.8 120.3C568.4 133.9 576 152.3 576 171.4C576 190.5 568.4 209 554.8 222.5C551.3 226 536.4 240.9 509.9 267.4z"
+            ></path>
+          </svg>
+        </div>
+        <div class="text">
+          <h2>Notes</h2>
+        </div>
+        <div>
+          <ul class="navigate">
+            <li><a href="createnotehomepage.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right-part">
+        <div class="headerbutton button">
+          <button>Create Note</button>
+        </div>
+        <div>
+          <a class="log-out" href="signup.html">log out</a>
+        </div>
+        <div class="sandwhichicon">
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            ></path>
+          </svg>
+        </div>
+      </div>
+
+      <section class="mobile-menu hidden">
+        <div class="mobile-top">
+          <div class="mobile-logo">
+            <svg
+              class="pen"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              class="mx-auto h-10 w-10 text-indigo-400"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 301.3L442.1 335.2L260.9 516.4C250.2 527.1 236.8 534.9 222.2 539L94.4 574.6C86.1 576.9 77.1 574.6 71 568.4C64.9 562.2 62.6 553.3 64.9 545L100.4 417.2zM156 413.5C151.6 418.2 148.4 423.9 146.7 430.1L122.6 517L209.5 492.9C215.9 491.1 221.7 487.8 226.5 483.2L155.9 413.5zM510 267.4C493.4 250.8 458.7 216.1 406 163.4L372 129.5C398.5 103 413.4 88.1 416.9 84.6C430.4 71 448.8 63.4 468 63.4C487.2 63.4 505.6 71 519.1 84.6L554.8 120.3C568.4 133.9 576 152.3 576 171.4C576 190.5 568.4 209 554.8 222.5C551.3 226 536.4 240.9 509.9 267.4z"
+              ></path>
             </svg>
-            </div>
-            <div class="text">
-                <h2>Notes</h2>
-            </div>
-            <div>
-                <ul class="navigate">
-                    <li><a href="createnotehomepage.html">Home</a></li>
-                </ul>
-            </div>
+
+            <h2 class="notess">Notes</h2>
+          </div>
+
+          <button class="close-menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
 
-        <div class="right-part">
-           
-            <div class="headerbutton button">
-                <button>Create Note</button>
-            </div>
-             <div>
-                <a class="log-out" href="signup.html">log out</a>
-            </div>
-             <div class="sandwhichicon">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        <div class="mobile-links">
+          <a href="#">Home</a>
 
-                </svg>
+          <button class="notess">Create note</button>
 
-            </div>
+          <a class="notess" href="signup.html">Log out</a>
         </div>
-
-                        <section class="mobile-menu hidden">
-
-                            <div class="mobile-top">
-
-                                <div class="mobile-logo">
-
-                                    <svg class="pen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="mx-auto h-10 w-10 text-indigo-400" fill="currentColor" aria-hidden="true">
-                                        <path d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 301.3L442.1 335.2L260.9 516.4C250.2 527.1 236.8 534.9 222.2 539L94.4 574.6C86.1 576.9 77.1 574.6 71 568.4C64.9 562.2 62.6 553.3 64.9 545L100.4 417.2zM156 413.5C151.6 418.2 148.4 423.9 146.7 430.1L122.6 517L209.5 492.9C215.9 491.1 221.7 487.8 226.5 483.2L155.9 413.5zM510 267.4C493.4 250.8 458.7 216.1 406 163.4L372 129.5C398.5 103 413.4 88.1 416.9 84.6C430.4 71 448.8 63.4 468 63.4C487.2 63.4 505.6 71 519.1 84.6L554.8 120.3C568.4 133.9 576 152.3 576 171.4C576 190.5 568.4 209 554.8 222.5C551.3 226 536.4 240.9 509.9 267.4z"></path>
-                                </svg>
-
-                                    <h2 class="notess">Notes</h2>
-
-                                </div>
-
-                                <button class="close-menu">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </button>
-
-                            </div>
-
-                            <div class="mobile-links">
-
-                                <a href="#">Home</a>
-
-                                <button class="notess">Create note</button>
-
-                                <a class="notess" href="signup.html">Log out</a>
-
-                            </div>
-
-                </section>
-                    
-
+      </section>
     </header>
     <section class="mainproperty">
-        <div class="identificationpart">
-            <div class="leftpart">
-                <h2 id="pagetitle">Create Note</h2>
-                <p id="pagedescription">Add a title and content, then save</p>
+      <div class="identificationpart">
+        <div class="leftpart">
+          <h2 id="pagetitle">Create Note</h2>
+          <p id="pagedescription">Add a title and content, then save</p>
+        </div>
+        <div>
+          <a id="identificationpartbth" href="createnotehomepage.html"
+            ><i class="fa-sharp fa-solid fa-arrow-left-long"></i>Back to home</a
+          >
+        </div>
+      </div>
+      <div class="notetitle">
+        <label for="title">Title:</label>
 
-            </div>
-            <div>
-                <a id="identificationpartbth" href="createnotehomepage.html"><i class="fa-sharp fa-solid fa-arrow-left-long"></i>Back to home</a>
-            </div>
-        </div>
-        <div class="notetitle">
-            <label for="title">Title:</label>
-            
-            <input id="text" type="text" placeholder="Note title">
-        </div>
-        <div class="notecontent">
-            <label for="content">Content:</label>
-            <textarea name="notedescription" id="content" placeholder="write your note..."></textarea>
-            
-            
-        </div>
-        <div class="buttons">
-            <button class="savecreate">Save</button>
-            <button class="cancel">Cancel</button>
-            <!--<button class="shownotes">Show Notes</button>
+        <input id="text" type="text" placeholder="Note title" />
+      </div>
+      <div class="notecontent">
+        <label for="content">Content:</label>
+        <textarea
+          name="notedescription"
+          id="content"
+          placeholder="write your note..."
+        ></textarea>
+      </div>
+      <div class="buttons">
+        <button class="savecreate">Save</button>
+        <button class="cancel">Cancel</button>
+        <!--<button class="shownotes">Show Notes</button>
             <button class="logout">Logout</button>-->
-        </div>
+      </div>
     </section>
-    
-<footer>
-        <div class="footer">
-            <div class="footer__subpart footer--partsub">
-                <p>Notes</p>
-                <p class="ppara">A simple space to write, edit, and grow your best thoughts.</p>
-            </div>
-            <div class="footer__subpart">
-                <p>Product</p>
-                <p class="ppara">Home</p>
-            </div>
-            <div class="footer__subpart">
-                <p>Account</p>
-                <p class="ppara">Sign in</p>
-                <p class="ppara">Sign Up</p>
-            </div>
-            <div class="footer__subpart">
-                <p>Support</p>
-                <p class="ppara">Built with care. More features coming soon.</p>
-            </div>
+
+    <footer>
+      <div class="footer">
+        <div class="footer__subpart footer--partsub">
+          <p>Notes</p>
+          <p class="ppara">
+            A simple space to write, edit, and grow your best thoughts.
+          </p>
         </div>
-
-        <div class="footer__endpart">
-            <p>© 2026  Notes. All rights reserved.</p>
-            <p>Made for thinkers, planners, and doers.</p>
+        <div class="footer__subpart">
+          <p>Product</p>
+          <p class="ppara">Home</p>
         </div>
+        <div class="footer__subpart">
+          <p>Account</p>
+          <p class="ppara">Sign in</p>
+          <p class="ppara">Sign Up</p>
+        </div>
+        <div class="footer__subpart">
+          <p>Support</p>
+          <p class="ppara">Built with care. More features coming soon.</p>
+        </div>
+      </div>
 
-
+      <div class="footer__endpart">
+        <p>© 2026 Notes. All rights reserved.</p>
+        <p>Made for thinkers, planners, and doers.</p>
+      </div>
     </footer>
-    
-
-
 
     <!--<section class="notes">
         
       
     </section>-->
-    
-</body>
+  </body>
 </html>

@@ -1,155 +1,135 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
-body{
-    background-color: #020f2b;
-    
-    
+body {
+  background-color: #020f2b;
 }
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-.header-part{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
+.header-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
 }
-.header-part img{
-    width:47px;
-    height: 40px;
+.header-part img {
+  width: 47px;
+  height: 40px;
 }
 
-section h1{
-    font-weight: 700;
-    font-size: 30px; 
-    margin-top: 40px;
-    margin-bottom: 30px;
-    line-height: 4px;
-    color:white;
+section h1 {
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  line-height: 4px;
+  color: white;
 }
-section form label{
-    color:white;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    
+section form label {
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
 }
-section form input{
-    display:block;
-    width:384px;
-    height:36px;
-    margin-top: 10px;
-    margin-bottom: 24px;
-    border-radius: 5.6px;
-    background-color: #17233f;
-    color:white;
-    border:1px solid #2f3b58;
-    
-    
+section form input {
+  display: block;
+  width: 384px;
+  height: 36px;
+  margin-top: 10px;
+  margin-bottom: 24px;
+  border-radius: 5.6px;
+  background-color: #17233f;
+  color: white;
+  border: 1px solid #2f3b58;
 }
-section form input:focus{
-    outline:none;
-    border:2px solid dodgerblue
-    
+section form input:focus {
+  outline: none;
+  border: 2px solid dodgerblue;
 }
 
-
-.form-elements input{
-    display:block;
-    
+.form-elements input {
+  display: block;
 }
-.form-elements label{
-    margin-right: 158px;
+.form-elements label {
+  margin-right: 158px;
 }
-.form-elements a{
-    text-decoration: none;
-    color:blue;
-    font-size: 20px;
+.form-elements a {
+  text-decoration: none;
+  color: blue;
+  font-size: 20px;
 }
-.form-elements a:hover{
-    color:rgb(76, 76, 148);
-    
+.form-elements a:hover {
+  color: rgb(76, 76, 148);
 }
-form button{
-    width: 384px;
-    height: 36px;
-    background-color: blue;
-    color:white;
-    border:none;
-    border-radius: 5.6px;
-    cursor: pointer;
+form button {
+  width: 384px;
+  height: 36px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5.6px;
+  cursor: pointer;
 }
-.form-elements1 p{
-    display:none;
+.form-elements1 p {
+  display: none;
 }
-.form-elements p{
-    display:none;
+.form-elements p {
+  display: none;
 }
 .endpart {
-    margin-top: 40px;
-    text-align: center;
+  margin-top: 40px;
+  text-align: center;
 }
-.endpart .para{
-    font-size: 14px;
-    color:lab(65.9269% -.832707 -8.17473)
+.endpart .para {
+  font-size: 14px;
+  color: lab(65.9269% -0.832707 -8.17473);
+}
+.endpart a {
+  font-size: 14px;
+  font-weight: 600;
+  color: lab(59.866% 22.4834 -64.4485);
+  text-decoration: none;
+}
+.pen {
+  color: lab(59.866% 22.4834 -64.4485);
+  width: 40px;
+  height: 40px;
+}
 
-}
-.endpart a{
-    font-size: 14px;
-    font-weight: 600;
-    color:lab(59.866% 22.4834 -64.4485);
-    text-decoration: none;
-}
-.pen{
-    color:lab(59.866% 22.4834 -64.4485);
-    width:40px;
-    height:40px;
-}
-
-@media (max-width: 768px){
-    section{
-        max-width: 90vw;
-        margin:44px 34px;
-       
-    }
-    section form input{
-    display:block;
-    width:90vw;
-    height:36px;
+@media (max-width: 768px) {
+  section {
+    max-width: 90vw;
+    margin: 44px 34px;
+  }
+  section form input {
+    display: block;
+    width: 90vw;
+    height: 36px;
     margin-top: 10px;
     margin-bottom: 24px;
     border-radius: 5.6px;
     background-color: #17233f;
-    border:1px solid #2f3b58;
-    
-    
-    
-}
-section form button{
+    border: 1px solid #2f3b58;
+  }
+  section form button {
     width: 90vw;
-    
-    
+  }
 }
-
-}
-@media (max-width: 576px){
-    
-    section h1{
+@media (max-width: 576px) {
+  section h1 {
     font-weight: 700;
-    font-size: 30px; 
+    font-size: 30px;
     margin-top: 40px;
     margin-bottom: 30px;
     line-height: 34px;
-    color:white;
-}
-    
-    
+    color: white;
+  }
 }
